@@ -1,0 +1,225 @@
+RewriteEngine on
+Header set X-UA-Compatible "IE=8, IE=edge, chrome=1"
+
+## Begin - Rewrite rules to block out some common exploits.
+# If you experience problems on your site block out the operations listed below
+#
+# Block out any script trying to base64_encode data within the URL.
+RewriteCond %{QUERY_STRING} base64_encode[^(]*\([^)]*\) [OR]
+# Block out any script that includes a <script> tag in URL.
+RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+# Block out any script trying to set a PHP GLOBALS variable via URL.
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+# Block out any script trying to modify a _REQUEST variable via URL.
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+# Return 403 Forbidden header and show the content of the root homepage
+#RewriteRule .* index.php [F]
+#
+## End - Rewrite rules to block out some common exploits.
+
+
+RewriteRule ^/$ index.php?act=home [nc]
+RewriteRule ^(th|en|cn)/$ index.php?lang=$1&act=home [nc]
+RewriteRule ^pkkaraoke.php$ index.php?act=home [nc]
+RewriteRule ^about-us/$ index.php?act=home [nc]
+RewriteRule ^product-service/$ product_category.php?act=service [nc]
+
+#--New
+RewriteRule ^(th|en|cn)/(บริการให้เช่า|service)/([0-9]+)/(.*)$ rental.php?lang=$1&cate_name=$2&view=$3&title=$4&act=service [nc]
+RewriteRule ^(th|en|cn)/(บริการให้เช่า|service)/$ service.php?lang=$1&cate=12&act=service [nc]
+RewriteRule ^(th|en|cn)/(สินค้า|product)/$ products.php?lang=$1&act=product [nc]
+RewriteRule ^(th|en|cn)/(ลิขสิทธิ์เพลง|copyright)/$ content_view.php?lang=$1&cate_name=$2&view=41&act=copyright [nc]
+RewriteRule ^(th|en|cn)/(ประชาสัมพันธ์|news)/$ content_category.php?lang=$1&cate_name=$2&cate=5&act=news [nc]
+RewriteRule ^(th|en|cn)/(ประชาสัมพันธ์|news)/(pages|หน้าที่)-([0-9]+)$ content_category.php?lang=$1&cate_name=$2&txt_page=$3&page=$4&cate=5&act=news [nc]
+RewriteRule ^(th|en|cn)/(ประชาสัมพันธ์|news)/([0-9]+)/(.*)$ content_view.php?lang=$1&cate_name=$2&view=$3&act=news [nc]
+RewriteRule ^(th|en|cn)/(เพลงฮิต|hit-song)/$ content_category.php?lang=$1&cate_name=$2&cate=13&act=hit [nc]
+RewriteRule ^(th|en|cn)/(เพลงฮิต|hit-song)/(pages|หน้าที่)-([0-9]+)$ content_category.php?lang=$1&cate_name=$2&txt_page=$3&page=$4&cate=13&act=hit [nc]
+RewriteRule ^(th|en|cn)/(เพลงฮิต|hit-song)/([0-9]+)/(.*)$ content_view.php?lang=$1&cate_name=$2&view=$3&act=hit [nc]
+RewriteRule ^(th|en|cn)/(ใบอนุญาตคาราโอเกะ|license)/$ content_category.php?lang=$1&cate_name=$2&cate=2&act=license [nc]
+RewriteRule ^(th|en|cn)/(ใบอนุญาตคาราโอเกะ|license)/(pages|หน้าที่)-([0-9]+)$ content_category.php?lang=$1&cate_name=$2&txt_page=$3&page=$4&cate=2&act=license [nc]
+RewriteRule ^(th|en|cn)/(ใบอนุญาตคาราโอเกะ|license)/([0-9]+)/(.*)$ content_view.php?lang=$1&cate_name=$2&view=$3&act=license [nc]
+RewriteRule ^(th|en|cn)/(เกี่ยวกับเรา|about)/$ content_category.php?lang=$1&cate_name=$2&cate=3&act=about [nc]
+RewriteRule ^(th|en|cn)/(เกี่ยวกับเรา|about)/(pages|หน้าที่)-([0-9]+)$ content_category.php?lang=$1&cate_name=$2&txt_page=$3&page=$4&cate=3&act=about [nc]
+RewriteRule ^(th|en|cn)/(เกี่ยวกับเรา|about)/([0-9]+)/(.*)$ content_view.php?lang=$1&cate_name=$2&view=$3&pname=$4&act=about [nc]
+RewriteRule ^(th|en|cn)/(ติดต่อเรา|contact)/$ contact.php?lang=$1&pname=$2&act=contact [nc]
+RewriteRule ^(th|en|cn)/(ผลงานของเรา|portfolio)/([0-9]+)/(.*)$ content_view.php?lang=$1&cate_name=$2&view=$3&act=portfolio [nc]
+RewriteRule ^(th|en|cn)/(ผลงานของเรา|portfolio)/$ portfolio.php?lang=$1&act=portfolio [nc]
+
+RewriteRule ^(th|en|cn)/portfolio/view/([0-9]+)/(.*)$ content_view.php?lang=$1&view=$2&title=$3 [nc]
+RewriteRule ^(th|en|cn)/gallery/view/([0-9]+)/(.*)$ gallery_view.php?lang=$1&view=$2&title=$3 [nc]
+RewriteRule ^(th|en|cn)/gallery/$ gallery_category.php?lang=$1&act=gallery [nc]
+RewriteRule ^(th|en|cn)/(content|news)/view/([0-9]+)/(.*)$ content_view.php?lang=$1&pname=$2&view=$3&title=$4 [nc]
+#RewriteRule ^news/$ content_category.php?act=news [nc]
+#RewriteRule ^search/$ search.php?act=home [nc]
+#RewriteRule ^license/$ content_view.php?view=11 [nc]
+#RewriteRule ^license/view/([0-9]+)/(.*)$ content_view.php?view=$1&title=$2 [nc]
+#RewriteRule ^license/$ content_category.php?cate=2&act=news [nc]
+
+#-- แบบเก่า --#
+RewriteRule ^pkkaraoke.php$ index.php?act=home [nc]
+RewriteRule ^about-us/$ history.php?act=about [nc]
+RewriteRule ^product-service/$ product_category.php?act=product [nc]
+RewriteRule ^portfolio/view/([0-9]+)/(.*)$ content_view.php?view=$1&tital=$2 [nc]
+RewriteRule ^portfolio/$ portfolio.php?act=portfolio [nc]
+RewriteRule ^gallery/view/([0-9]+)/(.*)$ gallery_view.php?view=$1&tital=$2 [nc]
+RewriteRule ^gallery/$ gallery_category.php?act=gallery [nc]
+RewriteRule ^(content|news)/view/([0-9]+)/(.*)$ content_view.php?pname=$1&view=$2&tital=$3 [nc]
+RewriteRule ^news/$ content_category.php?act=news [nc]
+RewriteRule ^contact/$ contact.php?act=contact [nc]
+RewriteRule ^search/$ search.php?act=home [nc]
+#RewriteRule ^license/$ content_view.php?view=11 [nc]
+RewriteRule ^license/view/([0-9]+)/(.*)$ content_view.php?view=$1&tital=$2 [nc]
+RewriteRule ^license/$ content_category.php?cate=2&act=news [nc]
+
+RewriteRule ^rss-feed/$ ror.xml [nc]
+RewriteRule ^404/$ 404.php?act=home [nc]
+
+#--------Content category--------#
+RewriteRule ^category/([A-Za-z0-9ก-ฮ_ะาิีุูไโั๊ีฯึำ๊เ้็่๋แ์\-]+)/$ content_category.php?cate_name=$1 [nc]
+RewriteRule ^category/([A-Za-z0-9ก-ฮ_ะาิีุูไโั๊ีฯึำ๊เ้็่๋แ์\-]+)/page-([0-9]+)$ content_category.php?cate_name=$1&page=$2 [nc]
+RewriteRule ^content/view/([0-9]+)/(.*)$ content_view.php?view=$1&title=$2 [nc]
+
+##### Redirect Error Page #####
+#ErrorDocument 401 http://www.pk-karaoke.com/
+#ErrorDocument 402 http://www.pk-karaoke.com/
+#ErrorDocument 403 http://www.pk-karaoke.com/
+#ErrorDocument 400 http://www.pk-karaoke.com/
+#ErrorDocument 404 http://www.pk-karaoke.com/404/
+#ErrorDocument 500 http://www.pk-karaoke.com/
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 seconds"
+  ExpiresByType image/x-icon "access plus 2592000 seconds"
+  ExpiresByType image/jpeg "access plus 2592000 seconds"
+  ExpiresByType image/png "access plus 2592000 seconds"
+  ExpiresByType image/gif "access plus 2592000 seconds"
+  ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
+  ExpiresByType text/css "access plus 2592000 seconds"
+  ExpiresByType text/javascript "access plus 2592000 seconds"
+  ExpiresByType application/x-javascript "access plus 2592000 seconds"
+  ExpiresByType application/xhtml+xml "access plus 2592000 seconds"
+</IfModule>
+
+<IfModule mod_deflate.c>
+	# Insert filters
+	AddOutputFilterByType DEFLATE text/plain
+	AddOutputFilterByType DEFLATE text/html
+	AddOutputFilterByType DEFLATE text/xml
+	AddOutputFilterByType DEFLATE text/css
+	AddOutputFilterByType DEFLATE application/xml
+	AddOutputFilterByType DEFLATE application/xhtml+xml
+	AddOutputFilterByType DEFLATE application/rss+xml
+	AddOutputFilterByType DEFLATE application/javascript
+	AddOutputFilterByType DEFLATE application/x-javascript
+	AddOutputFilterByType DEFLATE application/x-httpd-php
+	AddOutputFilterByType DEFLATE application/x-httpd-fastphp
+	AddOutputFilterByType DEFLATE image/svg+xml
+
+	# Drop problematic browsers
+	BrowserMatch ^Mozilla/4 gzip-only-text/html
+	BrowserMatch ^Mozilla/4\.0[678] no-gzip
+	BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+
+	# Make sure proxies don't deliver the wrong content
+	Header append Vary User-Agent env=!dont-vary
+</IfModule>
+
+#Config load font
+AddType application/vnd.ms-fontobject    .eot
+AddType application/x-font-opentype      .otf
+AddType image/svg+xml                    .svg
+AddType application/x-font-ttf           .ttf
+AddType application/font-woff            .woff
+
+<FilesMatch "\.(ttf|otf|eot|woff)$">
+    <IfModule mod_headers.c>
+        Header set Access-Control-Allow-Origin "*"
+    </IfModule>
+</FilesMatch>
+
+# Block IP
+#order allow,deny
+Deny from 193.105.240.44
+Deny from 104.254.244.128
+Deny from 162.253.144.140
+#allow from all
+
+# BLOCK SITE REFERRERS
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*semalt\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*event-tracking\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*darodar\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*Priceg\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*7makemoneyonline\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*Buttons-for-website\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*Ilovevitaly\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*Blackhatworth\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*Econom\.co [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*Iskalko\.ru [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*Lomb\.co [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*Lombia\.co [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*hulfingtonpost\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*cenoval\.ru [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*o\-o\-6\-o\-o\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*o\-o\-8\-o\-o\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*humanorightswatch\.org [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*simple\-share\-buttons\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*sharebutton\.org [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*s\.click\.aliexpress\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*social\-buttons\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*anticrawler\.org [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*site12\.social\-buttons\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*adcash\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*adviceforum\.info [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*anticrawler\.org [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*blackhatworth\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*cenokos\.ru [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*cityadspix\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*edakgfvwql\.ru [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*gobongo\.info [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*iskalko\.ru [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*kambasoft\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*luxup\.ru [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*myftpupload\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*prodvigator\.ua [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*resellerclub\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*savetubevideo\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*screentoolkit\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*seoexperimenty\.ru [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*slftsdybbg\.ru [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*socialseet\.ru [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*superiends\.org [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*vodkoved\.ru [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*websocial\.me [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*ykecwqlixx\.ru [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*76brighton\.co\.uk [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*paparazzistudios\.com\.au [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*powitania\.pl [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*sharebutton\.net [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*tasteidea\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*descargar\-musica\-gratis\.net [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*torontoplumbinggroup\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*cyprusbuyproperties\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*4webmasters\.org [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*ranksonic\.org [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*best\-seo\-solution\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*get\-free\-traffic\-now\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*googlsucks\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*buttons\-for\-your\-website\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*Best\-seo\-offer\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*offers\.bycontext\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*www1\.social\-buttons\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*website\-errors\-scanner\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*free\-share\-buttons\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*theguardlan\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*buy\-cheap\-online\.info [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*netvibes\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*guardlink\.org [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*securesuite\.co\.uk [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*securesuite\.net [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*sitevaluation\.org [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?:\/\/([^.]+\.)*forum20\.smailik\.org [NC]
+RewriteRule .* - [F]
+
+#RewriteCond %{HTTP_USER_AGENT} Baiduspider [NC]
+#RewriteRule .* – [F,L]

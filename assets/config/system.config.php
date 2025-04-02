@@ -8,7 +8,7 @@ header('Content-Type: text/html; charset=utf-8');
 date_default_timezone_set("Asia/Bangkok");
 
 //--------------Base part------------------//
-$config['BASE_URL'] 	= 'localhost:3000';
+$config['BASE_URL'] 	= 'localhost';
 $config['SITE_NAME']	= 'PK Karaoke';
 $config['GET_INFO']		= true;
 

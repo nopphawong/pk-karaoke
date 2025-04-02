@@ -11,4 +11,4 @@
 <script src="<?= $config['BASE_URL']; ?>assets/js/counter-up.js?v=<?= $version ?>"></script>
 <script src="<?= $config['BASE_URL']; ?>assets/js/wow.min.js?v=<?= $version ?>"></script>
 <script src="<?= $config['BASE_URL']; ?>assets/js/countdown.min.js?v=<?= $version ?>"></script>
-<script src="<?= $config['BASE_URL']; ?>assets/js/main.js?v=<?= $version ?>"></script>
+<script src="<?= $config['BASE_URL']; ?>assets/js/main.js?v=<?= $version ?>"></script> 

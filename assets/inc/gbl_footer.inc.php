@@ -1,65 +1,124 @@
-    
-            <!-- contact area start -->
-            <div class="total-registration ptb-80" id="register">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="section-title text-center mb-30">
-                                <h2 class="text-uppercase color-black fz-35 mb-25 brl-2 ptb-10"><i class="fa fa-phone"></i> โทรหาเราสิ</h2>
-                                <h3 class="fz-30 mb-25 color-blue"><a href="tel:+66968402497">096-840-2497</a></h3>
-                                <h3 class="fz-30 mb-25 color-blue"><a href="tel:+66909699524">090-969-9524</a></h3>
-                                <p><a href="https://line.me/ti/p/~pk-karaoke" target="_blank"><img height="36" border="0" src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png"></a></p>
-                                <h4 class="fz-24 mb-25">pk.office18@gmail.com</h4>
-                                P.K. คาราโอเกะ บิ๊กซี สายไหม ห้อง AA41 - AA42 90/30 ถนนสายไหม แขวงสายไหม เขตสายไหม กรุงเทพฯ 10220
+<!-- footer area -->
+<footer class="footer-area">
+    <div class="footer-shape">
+        <img src="assets/img/shape/01.png" alt="">
+    </div>
+    <div class="footer-widget">
+        <div class="container">
+            <div class="row footer-widget-wrapper pt-40 pb-30">
+                <div class="col-md-6 col-lg-5">
+                    <div class="footer-widget-box about-us">
+                        <di class="footer-logo-bg">
+                            <a href="<?= $config['BASE_URL']; ?>" class="footer-logo">
+                                <img src="<?= $config['BASE_URL'] . 'assets/img/logo.png?v=' . date('Ymd'); ?>" alt="<?= $config['SITE_NAME']; ?>">
+                            </a>
+                        </di>
+
+                        <p class="mb-3">
+                            ด้วยประสบการณ์ที่ยาวนานกว่า 10 ปี ในวงการ เช่าเครื่องคาราโอเกะ พร้อมด้วยบุคลากรผู้เชี่ยวชาญ เรามั่นใจว่าเราสามารถสร้างความประทับใจในทุกความบันเทิงของลูกค้าได้ทุกรูปแบบ
+                        </p>
+                        <!-- <div class="footer-newsletter">
+                            <p>Subscribe Our Newsletter</p>
+                            <div class="subscribe-form">
+                                <form action="#">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Your Email">
+                                        <button class="theme-btn" type="submit">
+                                            <span class="far fa-paper-plane"></span> Subscribe
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3872.6120094188486!2d100.66456061385429!3d13.922124297076898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d7d98a702e1b5%3A0x331c061b8438c6c4!2z4Lia4Li04LmK4LiB4LiL4Li1IOC4oeC4suC4o-C5jOC5gOC4geC5h-C4lSDguKrguLLguKLguYTguKvguKE!5e0!3m2!1sth!2sth!4v1543071359171" width="100%" height="450" frameborder="0" style="border:0; width:100%" allowfullscreen></iframe>
-                        </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <div class="footer-widget-box list">
+                        <h4 class="footer-widget-title">Quick Links</h4>
+                        <ul class="footer-list">
+                            <li><a href="<?= $config['BASE_URL'] . 'บริการให้เช่า/43/เช่าชุดคาราโอเกะ'; ?>"><i class="fas fa-caret-right"></i> เช่าคาราโอเกะ</a></li>
+                            <li><a href="<?= $config['BASE_URL'] . 'สินค้า/'; ?>"><i class="fas fa-caret-right"></i> สินค้า</a></li>
+                            <li><a href="<?= $config['BASE_URL'] . 'ลิขสิทธิ์เพลง/'; ?>"><i class="fas fa-caret-right"></i> ลิขสิทธิ์เพลง</a></li>
+                            <li><a href="<?= $config['BASE_URL'] . 'เพลงฮิต/'; ?>"><i class="fas fa-caret-right"></i> เพลงฮิต</a></li>
+                            <li><a href="<?= $config['BASE_URL'] . 'ประชาสัมพันธ์/'; ?>"><i class="fas fa-caret-right"></i> ประชาสัมพันธ์</a></li>
+
+                            <li><a href="<?= $config['BASE_URL'] . 'ติดต่อเรา/'; ?>"><i class="fas fa-caret-right"></i> ติดต่อเรา</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <div class="footer-widget-box list">
+                        <h4 class="footer-widget-title">Our Social</h4>
+                        <ul class="footer-list social">
+                            <li><a href="https://www.facebook.com/pkkaraoke.th/" target="_blank" rel="nofollow"><i class="fab fa-facebook"></i> Facebook</a></li>
+                            <li><a href="https://line.me/ti/p/~pk-karaoke" target="_blank" rel="noreferrer"><i class="fab fa-line"></i> Line</a></li>
+                            <li><a href="https://www.youtube.com/channel/UC84BZVBYKZ-FTWge91ByUCA/" target="_blank" rel="nofollow"><i class="fab fa-youtube"></i> Youtube</a></li>
+                            <li><a href="<?= $config['BASE_URL_MAIN'] . 'sitemap.html'; ?>" target="_blank" rel="nofollow"><i class="fa-solid fa-sitemap"></i> Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-widget-box list">
+                        <h4 class="footer-widget-title">Get In Touch</h4>
+                        <ul class="footer-contact">
+                            <li><a href="tel:+66868402497"><i class="far fa-phone"></i>086-840-2497</a></li>
+                            <li><a href="tel:+66909699524"><i class="far fa-phone"></i>090-969-9524</a></li>
+                            <li><a href="mailto:pk.office18@gmail.com"><i class="far fa-envelope"></i>pk.office18@gmail.com</a></li>
+                            <li>P.K. คาราโอเกะ บิ๊กซี สายไหม ห้อง AA41 - AA42 90/30 ถนนสายไหม แขวงสายไหม เขตสายไหม กรุงเทพฯ 10220</li>
+
+                        </ul>
+                        <!-- <div class="footer-request">
+                            <p>Book Your Ticket</p>
+                            <a href="#" class="theme-btn">Buy Ticket<i class="fas fa-arrow-right"></i></a>
+                        </div> -->
                     </div>
                 </div>
             </div>
-            <!-- contact area end -->
-
-            <!-- footer area start -->
-            <footer class="footer-area ptb-30 bg-black">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="footer-copyright text-center">
-                                <p class="fz-13 color-white mb-0">Copyright 2012 &copy; <a href="<?PHP echo $config['BASE_URL_MAIN']; ?>" class="color-white color-hover-main ls-1"><?PHP echo $config['SITE_NAME']; ?></a> ALL Right Reserved</p>
-                                <p>
-                                    <a href="https://www.facebook.com/pkkaraoke.th/" target="_blank" rel="nofollow" title="Facebook"><i class="fa fa-facebook"></i></a>
-                                    <a href="https://www.youtube.com/channel/UC84BZVBYKZ-FTWge91ByUCA/" target="_blank" rel="nofollow" title="Youtube"><i class="fa fa-youtube"></i></a>
-                                    <a href="<?PHP echo $config['BASE_URL_MAIN'].'sitemap.html'; ?>" target="_blank" title="Sitemap"><i class="fa fa-sitemap"></i></a>
-                                    <a href="<?PHP echo $config['BASE_URL_MAIN'].'rss-feed/'; ?>" target="_blank" title="Feed"><i class="fa fa-rss"></i></a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <!-- footer area end -->
-    
-    <!-- Load Facebook SDK for JavaScript -->
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-
-	<!-- Your customer chat code -->
-	<div class="fb-customerchat"
-	  attribution=setup_tool
-	  page_id="246475539026250"
-	  logged_in_greeting="PK KARAOKE จำหน่ายและให้เช่าเครื่องคาราโอเกะ ถามเราสิ"
-	  logged_out_greeting="PK KARAOKE จำหน่ายและให้เช่าเครื่องคาราโอเกะ ถามเราสิ">
+        </div>
     </div>
-    
-    <?PHP /* ?>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-12 align-self-center">
+                    <p class="copyright-text text-center">
+                        &copy; Copyright <span id="date"></span> <a href="<?= $config['BASE_URL']; ?>"> PK Karaoke </a> All Rights Reserved.
+                    </p>
+                </div>
+                <!-- <div class="col-md-6 align-self-center">
+                    <ul class="footer-menu">
+                        <li><a href="contact.html">Support</a></li>
+                        <li><a href="terms.html">Terms Of Services</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer area end -->
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+    attribution=setup_tool
+    page_id="246475539026250"
+    logged_in_greeting="PK KARAOKE จำหน่ายและให้เช่าเครื่องคาราโอเกะ ถามเราสิ"
+    logged_out_greeting="PK KARAOKE จำหน่ายและให้เช่าเครื่องคาราโอเกะ ถามเราสิ">
+</div>
+
+<?PHP /* ?>
     <!-- WhatsHelp.io widget -->
     <script type="text/javascript">
         (function () {
@@ -81,4 +140,3 @@
     </script>
     <!-- /WhatsHelp.io widget -->
     <?PHP */ ?>
-            

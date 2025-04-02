@@ -9,8 +9,6 @@
                         <div class="header-top-left">
                             <div class="header-top-contact">
                                 <ul>
-                                    <li><a href="#"><i class="far fa-location-dot"></i>
-                                            P.K. คาราโอเกะ บิ๊กซี สายไหม ห้อง AA41 - AA42 90/30 ถนนสายไหม แขวงสายไหม เขตสายไหม กรุงเทพฯ 10220</a></li>
                                     <li><a href="mailto:pk.office18@gmail.com"><i class="far fa-envelopes"></i>
                                             pk.office18@gmail.com</a></li>
                                     <li><a href="tel:+66868402497"><i class="far fa-phone-volume"></i> 086-840-2497</a>
@@ -51,8 +49,8 @@
     <div class="main-navigation">
         <nav class="navbar navbar-expand-lg">
             <div class="container position-relative">
-                <a href="<?= $config['BASE_URL']; ?>" class="navbar-brand">
-                    <img src="<?= $config['BASE_URL'] . 'assets/img/logo.png?v=' . date('Ymd'); ?>" alt="<?= $config['SITE_NAME']; ?>">
+                <a href="<?= $config['BASE_URL_MAIN']; ?>" class="navbar-brand">
+                    <img src="<?= $config['BASE_URL_MAIN'] . 'assets/img/logo.png?v=' . date('Ymd'); ?>" alt="<?= $config['SITE_NAME']; ?>">
                 </a>
                 <div class="mobile-menu-right">
                     <div class="search-btn">
@@ -66,9 +64,9 @@
                 </div>
                 <div class="collapse navbar-collapse" id="main_nav">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link <?= (($_GET['act'] == 'service') && ($_GET['view'] == $getAllProduct['content_id'])) ? 'active' : ''; ?>" href="<?= $config['BASE_URL'] . 'บริการให้เช่า/43/เช่าชุดคาราโอเกะ'; ?>">เช่าคาราโอเกะ</a></li>
-                        <li class="nav-item"><a class="nav-link <?= ($_GET['act'] == 'product') ? 'active' : ''; ?>" href="<?= $config['BASE_URL'] . 'สินค้า/'; ?>">สินค้า</a></li>
-                        <li class="nav-item"><a class="nav-link <?= ($_GET['act'] == 'copyright') ? 'active' : ''; ?>" href="<?= $config['BASE_URL'] . 'ลิขสิทธิ์เพลง/'; ?>">ลิขสิทธิ์เพลง</a></li>
+                        <li class="nav-item"><a class="nav-link <?= (($_GET['act'] == 'service') && ($_GET['view'] == $getAllProduct['content_id'])) ? 'active' : ''; ?>" href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/บริการให้เช่า/43/เช่าชุดคาราโอเกะ'; ?>">เช่าคาราโอเกะ</a></li>
+                        <li class="nav-item"><a class="nav-link <?= ($_GET['act'] == 'product') ? 'active' : ''; ?>" href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/สินค้า/'; ?>">สินค้า</a></li>
+                        <li class="nav-item"><a class="nav-link <?= ($_GET['act'] == 'copyright') ? 'active' : ''; ?>" href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/ลิขสิทธิ์เพลง/'; ?>">ลิขสิทธิ์เพลง</a></li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link <?= ($_GET['act'] == 'license') ? 'active' : ''; ?> dropdown-toggle" href="#" data-bs-toggle="dropdown">ใบอนุญาต</a>
@@ -86,14 +84,14 @@
                                                                                     ");
                                 while ($getAllProduct = $getContent->fetch()) {
                                 ?>
-                                    <li><a class="dropdown-item <?= (($_GET['act'] == 'license') && ($_GET['view'] == $getAllProduct['content_id'])) ? 'active' : ''; ?>" href="<?= $config['BASE_URL'] . 'ใบอนุญาตคาราโอเกะ/' . $getAllProduct['content_id'] . '/' . seoUrl($getAllProduct['name']); ?>"><?= $getAllProduct['name']; ?></a></li>
+                                    <li><a class="dropdown-item <?= (($_GET['act'] == 'license') && ($_GET['view'] == $getAllProduct['content_id'])) ? 'active' : ''; ?>" href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/ใบอนุญาตคาราโอเกะ/' . $getAllProduct['content_id'] . '/' . seoUrl($getAllProduct['name']); ?>"><?= $getAllProduct['name']; ?></a></li>
                                 <?php } ?>
                             </ul>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link <?= ($_GET['act'] == 'hit') ? 'active' : ''; ?>" href="<?= $config['BASE_URL'] . 'เพลงฮิต/'; ?>">เพลงฮิต</a></li>
+                        <li class="nav-item"><a class="nav-link <?= ($_GET['act'] == 'hit') ? 'active' : ''; ?>" href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/เพลงฮิต/'; ?>">เพลงฮิต</a></li>
 
-                        <li class="nav-item"><a class="nav-link <?= ($_GET['act'] == 'news') ? 'active' : ''; ?>" href="<?= $config['BASE_URL'] . 'ประชาสัมพันธ์/'; ?>">ประชาสัมพันธ์</a></li>
+                        <li class="nav-item"><a class="nav-link <?= ($_GET['act'] == 'news') ? 'active' : ''; ?>" href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/ประชาสัมพันธ์/'; ?>">ประชาสัมพันธ์</a></li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link <?= ($_GET['act'] == 'license') ? 'active' : ''; ?> dropdown-toggle" href="#" data-bs-toggle="dropdown">เกี่ยวกับเรา</a>
@@ -111,9 +109,9 @@
                                                                                     ");
                                 while ($getAllProduct = $getContent->fetch()) {
                                 ?>
-                                    <li><a class="dropdown-item <?= (($_GET['act'] == 'about') && ($_GET['view'] == $getAllProduct['content_id'])) ? 'active' : ''; ?>" href="<?= $config['BASE_URL'] . 'เกี่ยวกับเรา/' . $getAllProduct['content_id'] . '/' . seoUrl($getAllProduct['name']); ?>"><?= $getAllProduct['name']; ?></a></li>
+                                    <li><a class="dropdown-item <?= (($_GET['act'] == 'about') && ($_GET['view'] == $getAllProduct['content_id'])) ? 'active' : ''; ?>" href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/เกี่ยวกับเรา/' . $getAllProduct['content_id'] . '/' . seoUrl($getAllProduct['name']); ?>"><?= $getAllProduct['name']; ?></a></li>
                                 <?php } ?>
-                                <li><a class="dropdown-item <?= ($_GET['act'] == 'contact') ? 'active' : ''; ?>" href="<?= $config['BASE_URL'] . 'ติดต่อเรา/'; ?>">ติดต่อเรา</a></li>
+                                <li><a class="dropdown-item <?= ($_GET['act'] == 'contact') ? 'active' : ''; ?>" href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/ติดต่อเรา/'; ?>">ติดต่อเรา</a></li>
                             </ul>
                         </li>
 
