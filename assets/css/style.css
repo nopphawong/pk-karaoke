@@ -1074,10 +1074,6 @@ label {
 }
 
 @media all and (max-width: 1199px) {
-  .navbar::before{
-    width: 93%;
-  }
-
   .nav-right {
     margin-left: 25px !important;
   }

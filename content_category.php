@@ -30,7 +30,7 @@ $nowPage    = ! empty($chkPage) ? $chkPage : 1;
     <meta name="keywords" content="<?= getDesc($getCate['cate_name'], 100) . ',' . $config['KEYWORD']; ?>" />
     <meta name="description" content="<?= getDesc($getCate['cate_name'], 100) . ' : ' . getDesc($getCate['cate_detail'], 200); ?>" />
 
-    <meta property="og:url" content="<?= $config['BASE_URL'] . seoUrl($getCate['cate_name']) . '/'; ?>" />
+    <meta property="og:url" content="<?= $config['BASE_URL_MAIN'] . seoUrl($getCate['cate_name']) . '/'; ?>" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="<?= getDesc($getCate['cate_name'], 100) . ' | ' . $config['SITE_NAME']; ?>" />
     <meta property="og:description" content="<?= getDesc($getCate['cate_name'], 100) . ' : ' . getDesc($getCate['cate_detail'], 200); ?>" />
@@ -40,13 +40,13 @@ $nowPage    = ! empty($chkPage) ? $chkPage : 1;
     <title><?= getDesc($getCate['cate_name'], 100) . ' ' . $txtPages . ' ' . $nowPage . ' | ' . $config['SITE_NAME']; ?></title>
 
     <!-- css -->
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/bootstrap.min.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/all-fontawesome.min.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/animate.min.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/magnific-popup.min.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/owl.carousel.min.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/style.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/custom.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/bootstrap.min.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/all-fontawesome.min.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/animate.min.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/magnific-popup.min.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/owl.carousel.min.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/style.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/custom.css?v=<?= $version ?>">
 
     <?php include('assets/inc/gbl_tracking.inc.php'); ?>
 </head>
@@ -82,12 +82,12 @@ $nowPage    = ! empty($chkPage) ? $chkPage : 1;
     <main class="main">
 
         <!-- breadcrumb -->
-        <div class="site-breadcrumb" style="background: url(assets/img/breadcrumb/02.jpg?v=<?= $version ?>)">
+        <div class="site-breadcrumb" style="background: url(assets/img/breadcrumb/03.jpg?v=<?= $version ?>)">
             <div class="container">
                 <h2 class="breadcrumb-title"><?= $getCate['cate_name']; ?></h2>
                 <ul class="breadcrumb-menu">
-                    <li><a href="<?= $config['BASE_URL']; ?>"><?= $home; ?></a></li>
-                    <li><a href="<?= $config['BASE_URL'] . $_SESSION['LANG'] . '/' . seoUrl($getCate['cate_name']) . '/'; ?>"><?= $getCate['cate_name']; ?></a></li>
+                    <li><a href="<?= $config['BASE_URL_MAIN']; ?>"><?= $home; ?></a></li>
+                    <li><a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/' . seoUrl($getCate['cate_name']) . '/'; ?>"><?= $getCate['cate_name']; ?></a></li>
                     <li class="active"><?= $getCate['cate_name'] . ' ' . $txtPages . ' ' . $nowPage; ?></li>
                 </ul>
             </div>
@@ -125,7 +125,7 @@ $nowPage    = ! empty($chkPage) ? $chkPage : 1;
                     $scroll_page = 3;
                     $per_page = 6;
                     $current_page = $nowPage;
-                    $pager_url = $config['BASE_URL'] . $_SESSION['LANG'] . '/' . seoUrl($getCate['cate_name']) . '/' . seoUrl($txtPages) . '-';
+                    $pager_url = $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/' . seoUrl($getCate['cate_name']) . '/' . seoUrl($txtPages) . '-';
                     $inactive_page_tag = 'class="current"';
                     $previous_page_text = '<';
                     $next_page_text = '>';
@@ -144,19 +144,21 @@ $nowPage    = ! empty($chkPage) ? $chkPage : 1;
                                 <div class="blog-item wow fadeInUp pe-auto" data-wow-delay=".25s">
                                     <!-- <span class="blog-date">20 May</span> -->
                                     <div class="blog-item-img">
-                                        <img src="<?= 'http://www.pk-karaoke.com/uploads/profiles/' . $resultContent['content_profile'] . '?v=' . date('ymd'); ?>" alt="<?= htmlspecialchars($resultContent['name']); ?>">
+                                        <a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/' . seoUrl($getCate['cate_name']) . '/' . $resultContent['content_id'] . '/' . seoUrl($resultContent['name']); ?>">
+                                            <img src="<?= 'http://www.pk-karaoke.com/uploads/profiles/' . $resultContent['content_profile'] . '?v=' . date('ymd'); ?>" alt="<?= htmlspecialchars($resultContent['name']); ?>">
+                                        </a>
                                     </div>
                                     <div class="blog-item-info">
                                         <div class="blog-item-meta">
                                             <ul>
-                                                <li><a href="<?= $config['BASE_URL'] . $_SESSION['LANG'] . '/' . seoUrl($getCate['cate_name']) . '/' . $resultContent['content_id'] . '/' . seoUrl($resultContent['name']); ?>"><i class="fa-solid fa-headphones-simple"></i> <?= getDesc($resultContent['name'], 80); ?></a></li>
+                                                <li><a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/' . seoUrl($getCate['cate_name']) . '/' . $resultContent['content_id'] . '/' . seoUrl($resultContent['name']); ?>"><i class="fa-solid fa-headphones-simple"></i> <?= getDesc($resultContent['name'], 80); ?></a></li>
                                                 <li><a href="#"><i class="fa-solid fa-eye"></i> <?= number_format($resultContent['content_view']); ?> views</a></li>
                                             </ul>
                                         </div>
                                         <h5 class="blog-title">
-                                            <a href="<?= $config['BASE_URL'] . $_SESSION['LANG'] . '/' . seoUrl($getCate['cate_name']) . '/' . $resultContent['content_id'] . '/' . seoUrl($resultContent['name']); ?>"><?= getDesc($resultContent['detail'], 180); ?></a>
+                                            <a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/' . seoUrl($getCate['cate_name']) . '/' . $resultContent['content_id'] . '/' . seoUrl($resultContent['name']); ?>"><?= getDesc($resultContent['detail'], 180); ?></a>
                                         </h5>
-                                        <a class="theme-btn" href="<?= $config['BASE_URL'] . $_SESSION['LANG'] . '/' . seoUrl($getCate['cate_name']) . '/' . $resultContent['content_id'] . '/' . seoUrl($resultContent['name']); ?>">ดูเพิ่มเติม<i class="fas fa-arrow-right"></i></a>
+                                        <a class="theme-btn" href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/' . seoUrl($getCate['cate_name']) . '/' . $resultContent['content_id'] . '/' . seoUrl($resultContent['name']); ?>">ดูเพิ่มเติม<i class="fas fa-arrow-right"></i></a>
 
                                         <div class="text-end">
                                             <i class="fa fa-calendar color-main"></i> <?= date('j F, Y', strtotime($resultContent['content_date'])); ?>

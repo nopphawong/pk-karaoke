@@ -9,8 +9,8 @@
                 <div class="col-md-6 col-lg-5">
                     <div class="footer-widget-box about-us">
                         <di class="footer-logo-bg">
-                            <a href="<?= $config['BASE_URL']; ?>" class="footer-logo">
-                                <img src="<?= $config['BASE_URL'] . 'assets/img/logo.png?v=' . date('Ymd'); ?>" alt="<?= $config['SITE_NAME']; ?>">
+                            <a href="<?= $config['BASE_URL_MAIN']; ?>" class="footer-logo">
+                                <img src="<?= $config['BASE_URL_MAIN'] . 'assets/img/logo.png?v=' . date('Ymd'); ?>" alt="<?= $config['SITE_NAME']; ?>">
                             </a>
                         </di>
 
@@ -36,13 +36,12 @@
                     <div class="footer-widget-box list">
                         <h4 class="footer-widget-title">Quick Links</h4>
                         <ul class="footer-list">
-                            <li><a href="<?= $config['BASE_URL'] . 'บริการให้เช่า/43/เช่าชุดคาราโอเกะ'; ?>"><i class="fas fa-caret-right"></i> เช่าคาราโอเกะ</a></li>
-                            <li><a href="<?= $config['BASE_URL'] . 'สินค้า/'; ?>"><i class="fas fa-caret-right"></i> สินค้า</a></li>
-                            <li><a href="<?= $config['BASE_URL'] . 'ลิขสิทธิ์เพลง/'; ?>"><i class="fas fa-caret-right"></i> ลิขสิทธิ์เพลง</a></li>
-                            <li><a href="<?= $config['BASE_URL'] . 'เพลงฮิต/'; ?>"><i class="fas fa-caret-right"></i> เพลงฮิต</a></li>
-                            <li><a href="<?= $config['BASE_URL'] . 'ประชาสัมพันธ์/'; ?>"><i class="fas fa-caret-right"></i> ประชาสัมพันธ์</a></li>
-
-                            <li><a href="<?= $config['BASE_URL'] . 'ติดต่อเรา/'; ?>"><i class="fas fa-caret-right"></i> ติดต่อเรา</a></li>
+                            <li><a href="<?= $config['BASE_URL_MAIN'] .$_SESSION['LANG'] . '/บริการให้เช่า/43/เช่าชุดคาราโอเกะ'; ?>"><i class="fas fa-caret-right"></i> เช่าคาราโอเกะ</a></li>
+                            <li><a href="<?= $config['BASE_URL_MAIN'] .$_SESSION['LANG'] . '/สินค้า/'; ?>"><i class="fas fa-caret-right"></i> สินค้า</a></li>
+                            <li><a href="<?= $config['BASE_URL_MAIN'] .$_SESSION['LANG'] . '/ลิขสิทธิ์เพลง/'; ?>"><i class="fas fa-caret-right"></i> ลิขสิทธิ์เพลง</a></li>
+                            <li><a href="<?= $config['BASE_URL_MAIN'] .$_SESSION['LANG'] . '/เพลงฮิต/'; ?>"><i class="fas fa-caret-right"></i> เพลงฮิต</a></li>
+                            <li><a href="<?= $config['BASE_URL_MAIN'] .$_SESSION['LANG'] . '/ประชาสัมพันธ์/'; ?>"><i class="fas fa-caret-right"></i> ประชาสัมพันธ์</a></li>
+                            <li><a href="<?= $config['BASE_URL_MAIN'] .$_SESSION['LANG'] . '/ติดต่อเรา/'; ?>"><i class="fas fa-caret-right"></i> ติดต่อเรา</a></li>
                         </ul>
                     </div>
                 </div>
@@ -53,7 +52,7 @@
                             <li><a href="https://www.facebook.com/pkkaraoke.th/" target="_blank" rel="nofollow"><i class="fab fa-facebook"></i> Facebook</a></li>
                             <li><a href="https://line.me/ti/p/~pk-karaoke" target="_blank" rel="noreferrer"><i class="fab fa-line"></i> Line</a></li>
                             <li><a href="https://www.youtube.com/channel/UC84BZVBYKZ-FTWge91ByUCA/" target="_blank" rel="nofollow"><i class="fab fa-youtube"></i> Youtube</a></li>
-                            <li><a href="<?= $config['BASE_URL_MAIN'] . 'sitemap.html'; ?>" target="_blank" rel="nofollow"><i class="fa-solid fa-sitemap"></i> Sitemap</a></li>
+                            <li><a href="<?= $config['BASE_URL'] . 'sitemap.html'; ?>" target="_blank" rel="nofollow"><i class="fa-solid fa-sitemap"></i> Sitemap</a></li>
                         </ul>
                     </div>
                 </div>

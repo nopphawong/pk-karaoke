@@ -21,19 +21,19 @@ $version = date('Ymd');
     <meta property="og:type" content="website" />
     <meta property="og:title" content="<? '404 Page not found!'; ?> | <? $config['SITE_NAME']; ?>" />
     <meta property="og:description" content="404 Page not found!" />
-    <meta property="og:image" content="<? $config['BASE_URL_MAIN'] . 'uploads/profiles/' . $content_profile . '?v=1001'; ?>" />
+    <meta property="og:image" content="<? $config['BASE_URL'] . 'uploads/profiles/' . $content_profile . '?v=1001'; ?>" />
 
     <!-- title -->
     <title><?= '404 Page not found! | ' . $config['SITE_NAME']; ?></title>
 
     <!-- css -->
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/bootstrap.min.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/all-fontawesome.min.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/animate.min.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/magnific-popup.min.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/owl.carousel.min.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/style.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/custom.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/bootstrap.min.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/all-fontawesome.min.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/animate.min.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/magnific-popup.min.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/owl.carousel.min.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/style.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/custom.css?v=<?= $version ?>">
 
     <?php include('assets/inc/gbl_tracking.inc.php'); ?>
 </head>
@@ -69,11 +69,11 @@ $version = date('Ymd');
     <main class="main">
 
         <!-- breadcrumb -->
-        <div class="site-breadcrumb" style="background: url(assets/img/breadcrumb/02.jpg)">
+        <div class="site-breadcrumb" style="background: url(assets/img/breadcrumb/03.jpg)">
             <div class="container">
                 <h2 class="breadcrumb-title">404 Error</h2>
                 <ul class="breadcrumb-menu">
-                    <li><a href="<?= $config['BASE_URL']; ?>"><?= $home; ?></a></li>
+                    <li><a href="<?= $config['BASE_URL_MAIN']; ?>"><?= $home; ?></a></li>
                     <li class="active">404 Error</li>
                 </ul>
             </div>
@@ -90,7 +90,7 @@ $version = date('Ymd');
                             <img src="assets/img/error/01.png" alt="">
                         </div>
                         <h2>Opos... Page Not Found!</h2>
-                        <a href="<?= $config['BASE_URL']; ?>" class="theme-btn">Go Back Home <i class="far fa-home"></i></a>
+                        <a href="<?= $config['BASE_URL_MAIN']; ?>" class="theme-btn">Go Back Home <i class="far fa-home"></i></a>
                     </div>
                 </div>
             </div>

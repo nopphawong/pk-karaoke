@@ -35,7 +35,7 @@ $getCatePort = $db->queryAndFetch(" SELECT * FROM " . $tbl . "_content_category_
                 <div class="col-6 col-md-3 col-lg-2">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src="<?= $config['BASE_URL_MAIN'] . 'uploads/profiles/' . $resultPort['content_profile'] . '?v=' . date('ymd'); ?>" alt="<?= htmlspecialchars($resultPort['content_name']); ?>">
+                            <img src="<?= $config['BASE_URL'] . 'uploads/profiles/' . $resultPort['content_profile'] . '?v=' . date('ymd'); ?>" alt="<?= htmlspecialchars($resultPort['content_name']); ?>">
                         </div>
                         <div class="team-content">
                             <div class="info">

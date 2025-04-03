@@ -5,6 +5,7 @@ require('assets/inc/connection.inc.php');
 require('assets/inc/function.inc.php');
 require('assets/inc/lang.inc.php');
 include('assets/lang/' . $_SESSION['LANG'] . '.lang.php');
+require('assets/inc/kgPager.class.php');
 
 $version = date('Ymd');
 #----Get Data----#
@@ -37,13 +38,13 @@ $getCate    = $db->queryAndFetch(
     <title><?= 'จำหน่ายเครื่องคาราโอเกะ เครื่องเสียง | ' . $config['SITE_NAME']; ?></title>
 
     <!-- css -->
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/bootstrap.min.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/all-fontawesome.min.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/animate.min.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/magnific-popup.min.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/owl.carousel.min.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/style.css?v=<?= $version ?>">
-    <link rel="stylesheet" href="<?= $config['BASE_URL']; ?>assets/css/custom.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/bootstrap.min.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/all-fontawesome.min.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/animate.min.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/magnific-popup.min.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/owl.carousel.min.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/style.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="<?= $config['BASE_URL_MAIN']; ?>assets/css/custom.css?v=<?= $version ?>">
 
     <?php include('assets/inc/gbl_tracking.inc.php'); ?>
 </head>
@@ -79,11 +80,11 @@ $getCate    = $db->queryAndFetch(
     <main class="main">
 
         <!-- breadcrumb -->
-        <div class="site-breadcrumb" style="background: url(assets/img/breadcrumb/02.jpg?v=<?= $version ?>)">
+        <div class="site-breadcrumb" style="background: url(assets/img/breadcrumb/03.jpg?v=<?= $version ?>)">
             <div class="container">
                 <h2 class="breadcrumb-title">จำหน่ายเครื่องคาราโอเกะ เครื่องเสียง</h2>
                 <ul class="breadcrumb-menu">
-                    <li><a href="<?= $config['BASE_URL']; ?>"><?= $home; ?></a></li>
+                    <li><a href="<?= $config['BASE_URL_MAIN']; ?>"><?= $home; ?></a></li>
                     <li class="active">จำหน่ายเครื่องคาราโอเกะ เครื่องเสียง</li>
                 </ul>
             </div>
@@ -93,39 +94,57 @@ $getCate    = $db->queryAndFetch(
 
         <!-- team single -->
         <div class="team-single py-120">
-            <div class="container">
-                <div class="team-single-content">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-md-4">
-                            <div class="team-single-img">
-                                <img src="assets/img/speaker/single.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="team-details">
-                                <h3 class="name">Carson Stuckey</h3>
-                                <span class="designation">Project Manager</span>
-                                <div class="team-details-info">
-                                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters packages and web page editors now usepackages and web page editors now use.</p>
-                                    <ul>
-                                        <li><a href="#"><i class="far fa-buildings"></i> <span>Company:</span> Demo Company Ltd.</a></li>
-                                        <li><a href="#"><i class="far fa-sliders"></i> <span>Experience:</span> 15 Years</a></li>
-                                        <li><a href="#"><i class="far fa-envelope"></i> <span>Email:</span> carson@example.com</a></li>
-                                        <li><a href="#"><i class="far fa-phone"></i> <span>Phone:</span> +2 123 456 7892</a></li>
-                                        <li><a href="#"><i class="far fa-globe"></i> <span>Website:</span> www.example.com</a></li>
-                                    </ul>
+            <div class="container d-flex flex-column gap-4">
+                <?php
+                $search = !empty($_GET['key']) ? $db->escapeString(clean($_GET['key'])) : NULL;
+
+                $query  = " SELECT c.content_id
+											, c.content_profile
+											, l.content_name as name
+											, l.content_detail as detail
+										FROM " . $tbl . "_content c
+										LEFT JOIN " . $tbl . "_content_" . $_SESSION['LANG'] . " l ON c.content_id = l.ref_content_id
+										WHERE c.content_status = '1' 
+										AND c.content_type = $cateID ";
+                $query  .= ! empty($search) ? " AND ( l.content_name LIKE '%$search%' OR l.content_detail LIKE '%$search%') " : "";
+
+                $sql = $db->queryResult($query);
+                $total_records = $sql->numRows;
+                $scroll_page = $total_records;
+                $per_page = $total_records;
+                $current_page = $_GET['page'];
+                $pager_url = 'product_category.php?key=' . $search . '&page=';
+                $inactive_page_tag = 'class="active"';
+                $previous_page_text = '<i class="fa fa-angle-left"></i>';
+                $next_page_text = '<i class="fa fa-angle-right"></i>';
+                $first_page_text = '&laquo; First page';
+                $last_page_text = 'Last page &raquo;';
+
+                $kgPagerOBJ = new kgPager();
+                $kgPagerOBJ->pager_set($pager_url, $total_records, $scroll_page, $per_page, $current_page, $inactive_page_tag, $previous_page_text, $next_page_text, $first_page_text, $last_page_text, $pager_url_last);
+                $getContent = $db->queryResult($query . " ORDER BY c.content_id ASC LIMIT " . $kgPagerOBJ->start . ", " . $kgPagerOBJ->per_page . "");
+                $n = 0;
+                while ($resultContent = $getContent->fetch()) {
+                    ++$n;
+                ?>
+                    <div class="team-single-content">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-md-4">
+                                <div class="team-single-img">
+                                    <img src="<?= $config['BASE_URL'] . 'uploads/profiles/' . $resultContent['content_profile'] . '?v=' . $version; ?>" alt="<?= htmlspecialchars($resultContent['name']); ?>">
                                 </div>
-                                <div class="team-details-social">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-behance"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="team-details">
+                                    <h3 class="name"><?= $resultContent['name']; ?></h3>
+                                    <div class="team-details-info">
+                                        <?= $resultContent['detail']; ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
         <!-- team single end -->

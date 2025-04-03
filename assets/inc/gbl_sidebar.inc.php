@@ -4,7 +4,7 @@
         <div class="sidebar-content">
             <button type="button" class="close-sidebar-popup"><i class="far fa-xmark"></i></button>
             <div class="sidebar-logo">
-                <img src="<?PHP echo $config['BASE_URL'] . 'assets/img/logo.png?v=' . date('Ymd'); ?>" alt="<?PHP echo $config['SITE_NAME']; ?>">
+                <img src="<?PHP echo $config['BASE_URL_MAIN'] . 'assets/img/logo.png?v=' . date('Ymd'); ?>" alt="<?PHP echo $config['SITE_NAME']; ?>">
             </div>
             <div class="sidebar-about">
                 <h4>เกี่ยวกับเรา</h4>

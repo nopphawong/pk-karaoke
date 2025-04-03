@@ -25,8 +25,8 @@ RewriteRule ^about-us/$ index.php?act=home [nc]
 RewriteRule ^product-service/$ product_category.php?act=service [nc]
 
 #--New
-RewriteRule ^(th|en|cn)/(บริการให้เช่า|service)/([0-9]+)/(.*)$ rental.php?lang=$1&cate_name=$2&view=$3&title=$4&act=service [nc]
-RewriteRule ^(th|en|cn)/(บริการให้เช่า|service)/$ service.php?lang=$1&cate=12&act=service [nc]
+RewriteRule ^(th|en|cn)/(บริการให้เช่า|service)/([0-9]+)/(.*)$ packages.php?lang=$1&cate_name=$2&view=$3&title=$4&act=service [nc]
+RewriteRule ^(th|en|cn)/(บริการให้เช่า|service)/$ rental_services.php?lang=$1&cate=12&act=service [nc]
 RewriteRule ^(th|en|cn)/(สินค้า|product)/$ products.php?lang=$1&act=product [nc]
 RewriteRule ^(th|en|cn)/(ลิขสิทธิ์เพลง|copyright)/$ content_view.php?lang=$1&cate_name=$2&view=41&act=copyright [nc]
 RewriteRule ^(th|en|cn)/(ประชาสัมพันธ์|news)/$ content_category.php?lang=$1&cate_name=$2&cate=5&act=news [nc]

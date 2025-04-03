@@ -40,8 +40,8 @@ if (empty($chkDate) || ($chkDate < $today)) {
     <meta property="og:url" content="<?= $config['BASE_URL_MAIN']; ?>" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="<?= $config['SITE_DETAIL'] . ' | ' . $config['SITE_NAME']; ?>" />
-    <meta property="og:description" content="<?= $config['SITE_NAME'] . ' ' . $config['SITE_DETAIL']; ?>" />
-    <meta property="og:image" content="<?= $config['BASE_URL_MAIN'] . 'assets/images/trend-image2.jpg?v=1001'; ?>" />
+    <meta property="og:description" content="<?= $config['BASE_URL_MAIN'] . ' ' . $config['SITE_DETAIL']; ?>" />
+    <meta property="og:image" content="<?= $config['BASE_URL'] . 'assets/images/trend-image2.jpg?v=1001'; ?>" />
 
     <!-- title -->
     <title><?= 'เช่าคาราโอเกะ รายวัน-รายเดือน เช่าเครื่องเสียง ขายเครื่องคาราโอเกะ | ' . $config['SITE_NAME']; ?></title>
@@ -111,7 +111,7 @@ if (empty($chkDate) || ($chkDate < $today)) {
                                     <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
                                         <a href="tel:+66968402497" class="theme-btn">โทรหาเราสิ<i
                                                 class="fas fa-arrow-right"></i></a>
-                                        <a href="#" class="theme-btn theme-btn2">เกี่ยวกับเรา<i
+                                        <a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/เกี่ยวกับเรา/44/ทำไมต้องเลือกเรา'; ?>" class="theme-btn theme-btn2">เกี่ยวกับเรา<i
                                                 class="fas fa-arrow-right"></i></a>
                                     </div>
                                 </div>
@@ -119,7 +119,7 @@ if (empty($chkDate) || ($chkDate < $today)) {
                         </div>
                     </div>
                 </div>
-                <div class="hero-single" style="background: url(assets/img/hero/slider-4.jpg?v=<? $version ?>)">
+                <div class="hero-single" style="background: url(assets/img/hero/slider-6.jpg?v=<? $version ?>)">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-lg-7">
@@ -133,7 +133,7 @@ if (empty($chkDate) || ($chkDate < $today)) {
                                     <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
                                         <a href="tel:+66968402497" class="theme-btn">โทรหาเราสิ<i
                                                 class="fas fa-arrow-right"></i></a>
-                                        <a href="#" class="theme-btn theme-btn2">เกี่ยวกับเรา<i
+                                        <a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/เกี่ยวกับเรา/44/ทำไมต้องเลือกเรา'; ?>" class="theme-btn theme-btn2">เกี่ยวกับเรา<i
                                                 class="fas fa-arrow-right"></i></a>
                                     </div>
                                 </div>
@@ -141,7 +141,7 @@ if (empty($chkDate) || ($chkDate < $today)) {
                         </div>
                     </div>
                 </div>
-                <div class="hero-single" style="background: url(assets/img/hero/slider-4.jpg?v=<? $version ?>)">
+                <div class="hero-single" style="background: url(assets/img/hero/slider-7.jpg?v=<? $version ?>)">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-lg-7">
@@ -155,7 +155,7 @@ if (empty($chkDate) || ($chkDate < $today)) {
                                     <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
                                         <a href="tel:+66968402497" class="theme-btn">โทรหาเราสิ<i
                                                 class="fas fa-arrow-right"></i></a>
-                                        <a href="#" class="theme-btn theme-btn2">เกี่ยวกับเรา<i
+                                        <a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/เกี่ยวกับเรา/44/ทำไมต้องเลือกเรา'; ?>" class="theme-btn theme-btn2">เกี่ยวกับเรา<i
                                                 class="fas fa-arrow-right"></i></a>
                                     </div>
                                 </div>
@@ -179,8 +179,8 @@ if (empty($chkDate) || ($chkDate < $today)) {
                                 <img class="img-3" src="assets/img/about/03.jpg" alt="">
                             </div>
                             <div class="about-experience">
-                                <span>30</span>
-                                <h5>Years Of <br> Experience</h5>
+                                <h5>ประสบการณ์ <br> มากกว่า</h5>
+                                <span>10</span> <span style="font-size: 28px;">ปี</span>
                             </div>
                         </div>
                     </div>
@@ -224,7 +224,7 @@ if (empty($chkDate) || ($chkDate < $today)) {
                                     </li>
                                 </ul>
                             </div>
-                            <a href="about.html" class="theme-btn">ดูเพิ่มเติม<i class="fas fa-arrow-right"></i></a>
+                            <a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/เกี่ยวกับเรา/44/ทำไมต้องเลือกเรา'; ?>" class="theme-btn">ดูเพิ่มเติม<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
