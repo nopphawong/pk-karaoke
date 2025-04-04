@@ -69,7 +69,7 @@ $version = date('Ymd');
     <main class="main">
 
         <!-- breadcrumb -->
-        <div class="site-breadcrumb" style="background: url(assets/img/breadcrumb/03.jpg)">
+        <div class="site-breadcrumb" style="background: url(assets/img/breadcrumb/03.jpg?v?=<?= $version ?>)">
             <div class="container">
                 <h2 class="breadcrumb-title">404 Error</h2>
                 <ul class="breadcrumb-menu">
@@ -90,7 +90,7 @@ $version = date('Ymd');
                             <img src="assets/img/error/01.png" alt="">
                         </div>
                         <h2>Opos... Page Not Found!</h2>
-                        <a href="<?= $config['BASE_URL_MAIN']; ?>" class="theme-btn">Go Back Home <i class="far fa-home"></i></a>
+                        <a href="<?= $config['BASE_URL_MAIN']; ?>" class="theme-btn">กลับหน้าหลัก <i class="far fa-home"></i></a>
                     </div>
                 </div>
             </div>

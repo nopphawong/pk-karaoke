@@ -50,7 +50,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container position-relative">
                 <a href="<?= $config['BASE_URL_MAIN']; ?>" class="navbar-brand">
-                    <img src="<?= $config['BASE_URL_MAIN'] . 'assets/img/logo.png?v=' . date('Ymd'); ?>" alt="<?= $config['SITE_NAME']; ?>">
+                    <img src="<?= $config['BASE_URL_MAIN'] . 'assets/img/logo.png?v=' . $version . 1; ?>" alt="<?= $config['SITE_NAME']; ?>">
                 </a>
                 <div class="mobile-menu-right">
                     <div class="search-btn">

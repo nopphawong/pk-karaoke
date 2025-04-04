@@ -8,11 +8,11 @@
             <div class="row footer-widget-wrapper pt-40 pb-30">
                 <div class="col-md-6 col-lg-5">
                     <div class="footer-widget-box about-us">
-                        <di class="footer-logo-bg">
+                        <div class="footer-new-logo">
                             <a href="<?= $config['BASE_URL_MAIN']; ?>" class="footer-logo">
-                                <img src="<?= $config['BASE_URL_MAIN'] . 'assets/img/logo.png?v=' . date('Ymd'); ?>" alt="<?= $config['SITE_NAME']; ?>">
+                                <img src="<?= $config['BASE_URL_MAIN'] . 'assets/img/flogo.png?v=' . $version . 1; ?>" alt="<?= $config['SITE_NAME']; ?>">
                             </a>
-                        </di>
+                        </div>
 
                         <p class="mb-3">
                             ด้วยประสบการณ์ที่ยาวนานกว่า 10 ปี ในวงการ เช่าเครื่องคาราโอเกะ พร้อมด้วยบุคลากรผู้เชี่ยวชาญ เรามั่นใจว่าเราสามารถสร้างความประทับใจในทุกความบันเทิงของลูกค้าได้ทุกรูปแบบ
@@ -36,12 +36,12 @@
                     <div class="footer-widget-box list">
                         <h4 class="footer-widget-title">Quick Links</h4>
                         <ul class="footer-list">
-                            <li><a href="<?= $config['BASE_URL_MAIN'] .$_SESSION['LANG'] . '/บริการให้เช่า/43/เช่าชุดคาราโอเกะ'; ?>"><i class="fas fa-caret-right"></i> เช่าคาราโอเกะ</a></li>
-                            <li><a href="<?= $config['BASE_URL_MAIN'] .$_SESSION['LANG'] . '/สินค้า/'; ?>"><i class="fas fa-caret-right"></i> สินค้า</a></li>
-                            <li><a href="<?= $config['BASE_URL_MAIN'] .$_SESSION['LANG'] . '/ลิขสิทธิ์เพลง/'; ?>"><i class="fas fa-caret-right"></i> ลิขสิทธิ์เพลง</a></li>
-                            <li><a href="<?= $config['BASE_URL_MAIN'] .$_SESSION['LANG'] . '/เพลงฮิต/'; ?>"><i class="fas fa-caret-right"></i> เพลงฮิต</a></li>
-                            <li><a href="<?= $config['BASE_URL_MAIN'] .$_SESSION['LANG'] . '/ประชาสัมพันธ์/'; ?>"><i class="fas fa-caret-right"></i> ประชาสัมพันธ์</a></li>
-                            <li><a href="<?= $config['BASE_URL_MAIN'] .$_SESSION['LANG'] . '/ติดต่อเรา/'; ?>"><i class="fas fa-caret-right"></i> ติดต่อเรา</a></li>
+                            <li><a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/บริการให้เช่า/43/เช่าชุดคาราโอเกะ'; ?>"><i class="fas fa-caret-right"></i> เช่าคาราโอเกะ</a></li>
+                            <li><a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/สินค้า/'; ?>"><i class="fas fa-caret-right"></i> สินค้า</a></li>
+                            <li><a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/ลิขสิทธิ์เพลง/'; ?>"><i class="fas fa-caret-right"></i> ลิขสิทธิ์เพลง</a></li>
+                            <li><a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/เพลงฮิต/'; ?>"><i class="fas fa-caret-right"></i> เพลงฮิต</a></li>
+                            <li><a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/ประชาสัมพันธ์/'; ?>"><i class="fas fa-caret-right"></i> ประชาสัมพันธ์</a></li>
+                            <li><a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/ติดต่อเรา/'; ?>"><i class="fas fa-caret-right"></i> ติดต่อเรา</a></li>
                         </ul>
                     </div>
                 </div>

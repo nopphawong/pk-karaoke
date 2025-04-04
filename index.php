@@ -174,9 +174,9 @@ if (empty($chkDate) || ($chkDate < $today)) {
                     <div class="col-lg-6">
                         <div class="about-left wow fadeInRight" data-wow-delay=".25s">
                             <div class="about-img">
-                                <img class="img-1" src="assets/img/about/01.jpg" alt="">
-                                <img class="img-2" src="assets/img/about/02.jpg" alt="">
-                                <img class="img-3" src="assets/img/about/03.jpg" alt="">
+                                <img class="img-1" src="assets/img/about/04.webp?v=<?= $version ?>" alt="">
+                                <img class="img-2" src="assets/img/about/05.webp?v=<?= $version ?>" alt="">
+                                <img class="img-3" src="assets/img/about/07.webp?v=<?= $version ?>" alt="">
                             </div>
                             <div class="about-experience">
                                 <h5>ประสบการณ์ <br> มากกว่า</h5>
@@ -276,9 +276,9 @@ if (empty($chkDate) || ($chkDate < $today)) {
                                 <div class="feature-icon">
                                     <img src="assets/img/icon/speaker.svg" alt="">
                                 </div>
-                                <h4 class="feature-title">Great Speakers</h4>
-                                <p>It is a long established fact that a reader will be distracted.</p>
-                                <a href="contact.html" class="theme-btn mt-20">Learn More<i class="fas fa-arrow-right"></i></a>
+                                <h4 class="feature-title">เช่าอุปกรณ์คาราโอเกะครบวงจร</h4>
+                                <p>บริการให้เช่าเครื่องเสียง ไมโครโฟน และอุปกรณ์คาราโอเกะคุณภาพสูง สำหรับทุกงานอีเวนต์!</p>
+                                <a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/ติดต่อเรา'; ?>" class="theme-btn mt-20">ติดต่อเรา<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
@@ -287,9 +287,9 @@ if (empty($chkDate) || ($chkDate < $today)) {
                                 <div class="feature-icon">
                                     <img src="assets/img/icon/learn.svg" alt="">
                                 </div>
-                                <h4 class="feature-title">Learn New Things</h4>
-                                <p>It is a long established fact that a reader will be distracted.</p>
-                                <a href="contact.html" class="theme-btn mt-20">Learn More<i class="fas fa-arrow-right"></i></a>
+                                <h4 class="feature-title">จำหน่ายอุปกรณ์คาราโอเกะคุณภาพ</h4>
+                                <p>คัดสรรสินค้าระดับมืออาชีพ ทั้งลำโพง มิกเซอร์ จอภาพ และระบบเสียงที่ดีที่สุด!</p>
+                                <a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/ติดต่อเรา'; ?>" class="theme-btn mt-20">ติดต่อเรา<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
@@ -298,9 +298,9 @@ if (empty($chkDate) || ($chkDate < $today)) {
                                 <div class="feature-icon">
                                     <img src="assets/img/icon/meet.svg" alt="">
                                 </div>
-                                <h4 class="feature-title">Meet New People</h4>
-                                <p>It is a long established fact that a reader will be distracted.</p>
-                                <a href="contact.html" class="theme-btn mt-20">Learn More<i class="fas fa-arrow-right"></i></a>
+                                <h4 class="feature-title">บริการติดตั้งโดยทีมงานมืออาชีพ</h4>
+                                <p>ออกแบบและติดตั้งระบบคาราโอเกะให้เหมาะกับบ้าน ร้านอาหาร หรือสถานบันเทิงของคุณ!</p>
+                                <a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/ติดต่อเรา'; ?>" class="theme-btn mt-20">ติดต่อเรา<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
@@ -309,9 +309,9 @@ if (empty($chkDate) || ($chkDate < $today)) {
                                 <div class="feature-icon">
                                     <img src="assets/img/icon/question.svg" alt="">
                                 </div>
-                                <h4 class="feature-title">Ask Questions</h4>
-                                <p>It is a long established fact that a reader will be distracted.</p>
-                                <a href="contact.html" class="theme-btn mt-20">Learn More<i class="fas fa-arrow-right"></i></a>
+                                <h4 class="feature-title">อัปเดตเพลงใหม่ทุกเดือน</h4>
+                                <p>เพลิดเพลินกับเพลงใหม่ล่าสุด พร้อมระบบจัดการเพลงที่ใช้งานง่าย รองรับทุกแนวเพลง!</p>
+                                <a href="<?= $config['BASE_URL_MAIN'] . $_SESSION['LANG'] . '/ติดต่อเรา'; ?>" class="theme-btn mt-20">ติดต่อเรา<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -327,7 +327,6 @@ if (empty($chkDate) || ($chkDate < $today)) {
                     <div class="col-lg-5">
                         <div class="counter-info">
                             <div class="site-heading mb-3">
-                                <span class="site-title-tagline text-white">เครื่องคาราโอเกะ</span>
                                 <h2 class="site-title text-white">
                                     เครื่องคาราโอเกะทันสมัยที่สุดในไทย
                                 </h2>
@@ -337,59 +336,17 @@ if (empty($chkDate) || ($chkDate < $today)) {
                     </div>
                     <div class="col-lg-7">
                         <div class="row g-4 justify-content-center">
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <div class="counter-box wow fadeInUp" data-wow-delay=".25s">
-                                    <div class="icon">
-                                        <img src="assets/img/icon/workshop.svg" alt="">
-                                    </div>
-                                    <div class="counter-content">
-                                        <div class="counter-info">
-                                            <span class="counter" style="font-size: 42px;" data-count="+" data-to="50000" data-speed="3000">50000</span>
-                                            <span class="counter-unit">+</span>
-                                        </div>
-                                        <h6 class="title">คลังเพลงกว่า</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="counter-box wow fadeInDown" data-wow-delay=".25s">
-                                    <div class="icon">
-                                        <img src="assets/img/icon/participant.svg" alt="">
-                                    </div>
-                                    <div class="counter-content">
-                                        <div class="counter-info">
-                                            <span class="counter" data-count="+" data-to="260" data-speed="3000">260</span>
-                                            <span class="counter-unit">K</span>
-                                        </div>
-                                        <h6 class="title">Event Participants</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="counter-box wow fadeInUp" data-wow-delay=".25s">
-                                    <div class="icon">
-                                        <img src="assets/img/icon/speaker-2.svg" alt="">
-                                    </div>
-                                    <div class="counter-content">
-                                        <div class="counter-info">
-                                            <span class="counter" data-count="+" data-to="120" data-speed="3000">120</span>
-                                            <span class="counter-unit">+</span>
-                                        </div>
-                                        <h6 class="title">Skilled Speakers</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="counter-box wow fadeInDown" data-wow-delay=".25s">
                                     <div class="icon">
                                         <img src="assets/img/icon/award.svg" alt="">
                                     </div>
                                     <div class="counter-content">
                                         <div class="counter-info">
-                                            <span class="counter" data-count="+" data-to="50" data-speed="3000">50</span>
+                                            <span class="counter" data-count="+" data-to="50000" data-speed="3000">50000</span>
                                             <span class="counter-unit">+</span>
                                         </div>
-                                        <h6 class="title">Win Awards</h6>
+                                        <h6 class="title">คลังเพลงกว่า</h6>
                                     </div>
                                 </div>
                             </div>
@@ -412,7 +369,7 @@ if (empty($chkDate) || ($chkDate < $today)) {
 
 
         <!-- partner area -->
-        <div class="partner-area partner-bg py-80" style="background-image: url(assets/img/shape/04.png?v=<? $version ?>);">
+        <div class="partner-area partner-bg py-80">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -453,8 +410,8 @@ if (empty($chkDate) || ($chkDate < $today)) {
                             <div class="col-12">
                                 <div class="gallery-item wow fadeInDown" data-wow-delay=".25s">
                                     <div class="gallery-img">
-                                        <img src="assets/img/gallery/02.jpg" alt="">
-                                        <a class="popup-img gallery-link" href="assets/img/gallery/02.jpg"><i
+                                        <img src="assets/img/gallery/01.jpg?v=<?= $version ?>" alt="">
+                                        <a class="popup-img gallery-link" href="assets/img/gallery/01.jpg?v=<?= $version ?>"><i
                                                 class="fal fa-plus"></i></a>
                                     </div>
                                 </div>
@@ -462,8 +419,8 @@ if (empty($chkDate) || ($chkDate < $today)) {
                             <div class="col-6">
                                 <div class="gallery-item wow fadeInDown" data-wow-delay=".25s">
                                     <div class="gallery-img">
-                                        <img src="assets/img/gallery/03.jpg" alt="">
-                                        <a class="popup-img gallery-link" href="assets/img/gallery/03.jpg"><i
+                                        <img src="assets/img/gallery/02.jpg?v=<?= $version ?>" alt="">
+                                        <a class="popup-img gallery-link" href="assets/img/gallery/02.jpg?v=<?= $version ?>"><i
                                                 class="fal fa-plus"></i></a>
                                     </div>
                                 </div>
@@ -471,8 +428,8 @@ if (empty($chkDate) || ($chkDate < $today)) {
                             <div class="col-6">
                                 <div class="gallery-item wow fadeInDown" data-wow-delay=".25s">
                                     <div class="gallery-img">
-                                        <img src="assets/img/gallery/04.jpg" alt="">
-                                        <a class="popup-img gallery-link" href="assets/img/gallery/04.jpg"><i
+                                        <img src="assets/img/gallery/03.jpg?v=<?= $version ?>" alt="">
+                                        <a class="popup-img gallery-link" href="assets/img/gallery/03.jpg?v=<?= $version ?>"><i
                                                 class="fal fa-plus"></i></a>
                                     </div>
                                 </div>
@@ -482,8 +439,8 @@ if (empty($chkDate) || ($chkDate < $today)) {
                     <div class="col-md-5">
                         <div class="gallery-item wow fadeInUp" data-wow-delay=".25s">
                             <div class="gallery-img">
-                                <img src="assets/img/gallery/01.jpg" alt="">
-                                <a class="popup-img gallery-link" href="assets/img/gallery/01.jpg"><i
+                                <img src="assets/img/gallery/04.jpg?v=<?= $version . 1 ?>" alt="">
+                                <a class="popup-img gallery-link" href="assets/img/gallery/04.jpg?v=<?= $version ?>"><i
                                         class="fal fa-plus"></i></a>
                             </div>
                         </div>
